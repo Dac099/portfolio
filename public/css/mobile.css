@@ -15,14 +15,14 @@ body {
   font-family: var(--main-font);
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 500px 1fr 1fr 1fr;
+  grid-template-rows: 480px 500px 300px 1fr;
   gap: 10px;
   background-color: var(--bg-color);
   color: var(--font-color);
   padding: 10px;
 }
 
-.ResumeCard {
+.cardContainer {
   max-width: 1000px;
   justify-self: center;
 }
@@ -39,10 +39,11 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  height: 400px;
 }
 
 .ResumeCard section img {
-  max-width: 400px;
+  max-width: 450px;
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 300px;
@@ -52,4 +53,57 @@ body {
   flex-basis: 300px;
   align-self: center;
   text-align: justify;
+  margin-top: 20px;
+}
+
+.StackCard h2 {
+  color: var(--title-color);
+  margin-bottom: 10px;
+}
+
+.StackCard section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  height: 400px;
+}
+
+.StackCard .StackCard--items {
+  flex-basis: 100px;
+  max-width: 100px;
+  display: grid;
+  grid-template-columns: repeat(3,30px);
+  grid-template-rows: repeat(3,30px);
+  gap: 5px;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  list-style-type: none;
+  margin: 20px 0;
+}
+
+.StackCard section p {
+  flex-basis: 300px;
+  align-self: center;
+  text-align: justify;
+}
+
+.ProjectsCard h2{
+  margin-bottom: 20px;
+}
+
+.ProjectsCard .ProjectsCard--Project{
+  width: 300px;
+  height: 200px;
+}
+
+.ProjectsCard .ProjectsCard--Project a{
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.ProjectsCard .ProjectsCard--Project a img{
+
 }
