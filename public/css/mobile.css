@@ -1,0 +1,55 @@
+:root {
+  --bg-color: #192138;
+  --title-color: #93A0C3;
+  --font-color: #fff;
+  --main-font: 'Quicksand', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--main-font);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 500px 1fr 1fr 1fr;
+  gap: 10px;
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  padding: 10px;
+}
+
+.ResumeCard {
+  max-width: 1000px;
+  justify-self: center;
+}
+
+.ResumeCard h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: var(--title-color);
+  text-align: center;
+}
+
+.ResumeCard section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.ResumeCard section img {
+  max-width: 400px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 300px;
+}
+
+.ResumeCard section p {
+  flex-basis: 300px;
+  align-self: center;
+  text-align: justify;
+}
