@@ -7,9 +7,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" media="(max-width: 320px)" href="../css/mobile.css"> 
-  <link rel="stylesheet" media="(max-width: 768px)" href="../css/mobile.css"> 
-  <link rel="stylesheet" media="(max-width: 1200px)" href="../css/mobile.css"> 
+  <link rel="stylesheet" href="../css/mobile.css"> 
+  <!-- <link rel="stylesheet" media="(max-width: 768px)" href="../css/mobile.css">  -->
+  <!-- <link rel="stylesheet" media="(max-width: 1200px)" href="../css/mobile.css">  -->
   <title>David Dev</title>
 </head>
 <body>
@@ -66,23 +66,28 @@
   <article class="ProjectsCard cardContainer">
     <h2>Algunos proyectos</h2>
     <section class="ProjectsCard--Slider">
-      <a class="Slider--link" href="#Batabit">Batabit</a>
-      <a class="Slider--link" href="#Project2">Project2</a>
+      <section class="ProjectsCard--index">
+        <a class="Slider--link" href="#Batabit">Batabit</a>
+        <a class="Slider--link" href="#Project2">Project2</a>
+      </section>
       <section class="ProjectsCard--slide">
-        <a class="Slider--project" id="Batabit" href="https://batabitproject.netlify.app/" target="_blank"><img src="../media/batabit.png" width="250px" height="200px" alt=""></a>
-        <a class="Slider--project" id="Project2" href="" target="_blank"><img src="../media/soon_project.png" alt="" width="250px" height="200px" ></a>
+        <a class="Slider--project" id="Batabit" href="https://batabitproject.netlify.app/" target="_blank"><img src="../media/Batabit.png" width="300px" height="195px" alt=""></a>
+        <a class="Slider--project" id="Project2" href="" target="_blank"><img src="../media/soon_project.png" alt="" width="300px" height="195px" ></a>
       </section>
     </section>
   </article>
-  <article class="Aboutcard cardContainer">
+  <article class="AboutCard cardContainer">
     <h2>Sobre mí</h2>
-    <img src="../media/me.svg" alt="Person programming" width="300">
-    <p>La tecnología es uno de los temas que mas me apasiona, me encanta su presencia en la ciencia ficción y en la historia del desarrollo humano, y el desarrollo de software es el área por la que quiero contribuir al desarrollo tecnológico.
-
-      Considero el desarrollo de software como parte de vida, sin embargo también he sido tutor de programación para niños, lo cual me ayudo a mejorar la forma en la que me comunico y expreso mis ideas.
-      
-      Además del desarrollo de software estoy interesado en temas como astronomía, café, videojuegos, y ciclismo.
-    </p>
+    <section class="AboutCard--info">
+      <img src="../media/me.svg" alt="Person programming" width="300">
+      <p>
+        <br>La tecnología es uno de los temas que mas me apasiona, me encanta su presencia en la ciencia ficción y en la historia del desarrollo humano, y el desarrollo de software es el área por la que quiero contribuir al desarrollo tecnológico.<br>
+  
+        <br>Considero el desarrollo de software como parte de vida, sin embargo también he sido tutor de programación para niños, lo cual me ayudo a mejorar la forma en la que me comunico y expreso mis ideas.<br>
+        
+        <br>Además del desarrollo de software estoy interesado en temas como astronomía, café, videojuegos, y ciclismo.
+      </p>
+    </section>
   </article>
 </body>
 </html>

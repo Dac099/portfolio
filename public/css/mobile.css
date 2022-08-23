@@ -12,10 +12,10 @@
 }
 
 body {
+  width: 100%;
   font-family: var(--main-font);
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 480px 500px 300px 1fr;
+  grid-template-rows: 480px 500px 350px 1fr;
   gap: 10px;
   background-color: var(--bg-color);
   color: var(--font-color);
@@ -23,7 +23,9 @@ body {
 }
 
 .cardContainer {
-  max-width: 1000px;
+  /* max-width: 1000px; */
+  min-width: 300px;
+  width: 100%;
   justify-self: center;
 }
 
@@ -90,24 +92,108 @@ body {
   text-align: justify;
 }
 
+.ProjectsCard{
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.ProjectsCard--Slider{
+  height: 270px;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  place-content: center;
+}
+
+.ProjectsCard--index{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.ProjectsCard--index a {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+  text-decoration: none;
+  width: 70px;
+  height: 35px;
+  padding: 9px 0px;
+  border-radius: 10px;
+}
+
+.ProjectsCard--index a:hover {
+  background-color: var(--font-color);
+  color: var(--bg-color);
+}
+
 .ProjectsCard h2{
   margin-bottom: 20px;
   color: var(--title-color);
   text-align: left;
 }
 
-.ProjectsCard{
-  text-align: center;
-  overflow: hidden;
-}
-
-.ProjectsCard .ProjectsCard--slide{
+.ProjectsCard--slide{
   text-align: center;
   width: 300px;
-  height: 200px;
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+}
+
+.ProjectsCard--slide::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.ProjectsCard--slide::-webkit-scrollbar-thumb {
+  background: var(--title-color);
+  border-radius: 10px;
+}
+
+.ProjectsCard--slide::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ProjectsCard--slide > a img{
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  margin-right: 50px;
+  border-radius: 10px;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+}
+
+.ProjectsCard--Slider > a {
+  background-color: var(--title-color);
+  padding: 5px;
+  text-decoration: none;
+  color: var(--font-color);
+  margin-bottom: 15px;
+}
+
+.AboutCard h2{
+  color: var(--title-color);
+  text-align: left;
+}
+
+.AboutCard--info{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.AboutCard img{
+  flex-basis: 300px;
+  flex-grow: 1;
+  max-width: 400px;
+}
+
+.AboutCard--info p{
+  flex-basis: 300px;
 }
