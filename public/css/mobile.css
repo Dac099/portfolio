@@ -92,18 +92,22 @@ body {
 
 .ProjectsCard h2{
   margin-bottom: 20px;
+  color: var(--title-color);
+  text-align: left;
 }
 
-.ProjectsCard .ProjectsCard--Project{
+.ProjectsCard{
+  text-align: center;
+  overflow: hidden;
+}
+
+.ProjectsCard .ProjectsCard--slide{
+  text-align: center;
   width: 300px;
   height: 200px;
-}
-
-.ProjectsCard .ProjectsCard--Project a{
-  min-width: 100%;
-  min-height: 100%;
-}
-
-.ProjectsCard .ProjectsCard--Project a img{
-
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
