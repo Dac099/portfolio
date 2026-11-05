@@ -1,3 +1,28 @@
 .section { position: relative; isolation: isolate; min-height: 100dvh; display: grid; }
 .foreground { position: relative; z-index: 1; width: 100%; min-width: 0; min-height: 100dvh; display: grid; place-items: center; padding: 3rem 1rem; background: transparent; }
 .content { width: 100%; display: grid; gap: 2rem; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: scroll(root block)) and (animation-range: 0px 100dvh) {
+    .content > h1,
+    .content > p {
+      animation: slide-right 1ms linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0px 100dvh;
+    }
+
+    .content > p {
+      animation-name: slide-left;
+    }
+  }
+}
+
+@keyframes slide-right {
+  from { transform: translateX(0); }
+  to { transform: translateX(100vw); }
+}
+
+@keyframes slide-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100vw); }
+}
