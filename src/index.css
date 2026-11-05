@@ -1,5 +1,5 @@
 :root {
-  --bg: #212121; --fg: #e0e0e0; --sec: #807e7e; --acc: #f059de;
+  --bg: #0e0e0e; --fg: #e0e0e0; --sec: #807e7e; --acc: #d50db1;
   --ascii-font-size: 5px;
   --ascii-font-weight: 400;
   font-family: 'Space Mono', monospace;
@@ -16,9 +16,9 @@
   :root { --ascii-font-size: 12px; }
 }
 @media (prefers-color-scheme: light) {
-  :root:not([data-theme]) { --bg: #f2f2f2; --fg: #212121; --sec: #616161; --acc: #cc2fba; --ascii-font-weight: 700; }
+  :root:not([data-theme]) { --bg: #dfdfdf; --fg: #212121; --sec: #616161; --acc: #d50db1; --ascii-font-weight: 700; }
 }
-:root[data-theme='light'] { --bg: #b9b9b9; --fg: #212121; --sec: #616161; --acc: #cc2fba; --ascii-font-weight: 700; }
+:root[data-theme='light'] { --bg: #dfdfdf; --fg: #212121; --sec: #616161; --acc: #d50db1; --ascii-font-weight: 700; }
 *, *::before, *::after { box-sizing: border-box; }
 html, body { overflow-x: clip; }
 body { margin: 0; min-width: 0; }

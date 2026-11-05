@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import type { RefObject } from 'react'
 
-const interval = 600
+const interval = 700
 const speed = 0.18
 const width = 54
 const amplitude = 5
@@ -34,7 +34,10 @@ export function useRipple(backgroundRef: RefObject<HTMLDivElement | null>, isSma
       cancelAnimationFrame(frame)
       frame = 0
       start = null
-      for (const index of moved) characters[index].style.transform = ''
+      for (const index of moved) {
+        characters[index].style.transform = ''
+        characters[index].style.color = ''
+      }
       moved = new Set()
     }
 
@@ -53,9 +56,11 @@ export function useRipple(backgroundRef: RefObject<HTMLDivElement | null>, isSma
         if (Math.abs(delta) <= width) {
           const intensity = (1 + Math.cos(Math.PI * delta / width)) / 2
           characters[index].style.transform = `translateY(${(intensity * amplitude).toFixed(2)}px)`
+          characters[index].style.color = `color-mix(in srgb, var(--fg) ${(100 - intensity * 60).toFixed(1)}%, var(--bg))`
           nextMoved.add(index)
         } else if (moved.has(index)) {
           characters[index].style.transform = ''
+          characters[index].style.color = ''
         }
       }
       moved = nextMoved
