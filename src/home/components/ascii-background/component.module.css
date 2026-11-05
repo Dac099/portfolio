@@ -1,4 +1,5 @@
 .background {
+  --character-color: color-mix(in srgb, var(--fg) 30%, var(--bg));
   position: absolute;
   inset: 0;
   z-index: -1;
@@ -7,8 +8,7 @@
   grid-template-rows: repeat(50, minmax(0, 1fr));
   place-items: center;
   overflow: clip;
-  color: var(--fg);
-  filter: blur(2px);
+  color: var(--character-color);
   font-size: 0.75rem;
   line-height: 0.75;
   pointer-events: none;
