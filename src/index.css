@@ -1,0 +1,25 @@
+:root {
+  --bg: #212121; --fg: #e0e0e0; --sec: #807e7e; --acc: #f059de;
+  --ascii-font-size: 5px;
+  font-family: 'Space Mono', monospace;
+  color: var(--fg); background: var(--bg);
+  font-synthesis: none; -webkit-font-smoothing: antialiased;
+}
+@media (min-width: 768px) {
+  :root { --ascii-font-size: 8px; }
+}
+@media (min-width: 1024px) {
+  :root { --ascii-font-size: 10px; }
+}
+@media (min-width: 1440px) {
+  :root { --ascii-font-size: 12px; }
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) { --bg: #f2f2f2; --fg: #212121; --sec: #616161; --acc: #cc2fba; }
+}
+:root[data-theme='light'] { --bg: #f2f2f2; --fg: #212121; --sec: #616161; --acc: #cc2fba; }
+*, *::before, *::after { box-sizing: border-box; }
+html, body { overflow-x: clip; }
+body { margin: 0; min-width: 0; }
+button, select { font: inherit; }
+::selection { background: var(--acc); color: var(--bg); }
