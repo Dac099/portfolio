@@ -3,7 +3,7 @@ import type { RefObject } from 'react'
 
 const interval = 600
 const speed = 0.18
-const width = 28
+const width = 54
 const amplitude = 5
 const rows = 50
 
@@ -50,8 +50,8 @@ export function useRipple(backgroundRef: RefObject<HTMLDivElement | null>, isSma
         const distance = distances[index]
         const wave = Math.max(0, Math.min(previousWaves, Math.round((distance - latestRadius) / spacing)))
         const delta = distance - (latestRadius + wave * spacing)
-        if (Math.abs(delta) <= width * 3) {
-          const intensity = Math.exp(-(delta * delta) / (2 * width * width))
+        if (Math.abs(delta) <= width) {
+          const intensity = (1 + Math.cos(Math.PI * delta / width)) / 2
           characters[index].style.transform = `translateY(${(intensity * amplitude).toFixed(2)}px)`
           nextMoved.add(index)
         } else if (moved.has(index)) {
