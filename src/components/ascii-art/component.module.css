@@ -1,4 +1,4 @@
-.container { container-type: inline-size; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: .75rem 1.25rem; width: 100%; margin: 0; font-weight: 400; }
+.container { container-type: inline-size; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: .75rem 1.25rem; width: 100%; margin: 0; font-weight: var(--ascii-font-weight); }
 .left { justify-content: flex-start; }
 .accent { color: var(--acc); }
 .art { display: block; flex: none; white-space: pre; text-align: left; font-family: 'Space Mono', monospace; font-size: min(var(--ascii-font-size), calc(100cqi / var(--columns) / .65)); line-height: 1.1; letter-spacing: 0; font-variant-ligatures: none; }
