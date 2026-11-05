@@ -1,0 +1,23 @@
+.background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  display: grid;
+  grid-template-columns: repeat(25, minmax(0, 1fr));
+  grid-template-rows: repeat(50, minmax(0, 1fr));
+  place-items: center;
+  overflow: clip;
+  color: var(--fg);
+  filter: blur(2px);
+  font-size: 0.75rem;
+  line-height: 0.75;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .background {
+    grid-template-columns: repeat(50, minmax(0, 1fr));
+  }
+}
+
