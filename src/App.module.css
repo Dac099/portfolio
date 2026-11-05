@@ -1,1 +1,13 @@
-.toolbar { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 1rem; padding: 1rem clamp(1rem, 4vw, 3rem); }
+.toolbar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+  background: color-mix(in srgb, var(--bg) 65%, transparent);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
