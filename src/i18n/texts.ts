@@ -2,6 +2,7 @@ import type { Locale, TextDictionary } from './types'
 export const texts: Record<Locale, TextDictionary> = {
   en: {
     name: 'David Ceja Zapata', profession: 'Computer Systems Engineer',
+    portfolio: 'David Ceja Zapata - Portfolio', home: 'Home', contact: 'Contact', navigation: 'Navigation',
     experience: 'Experience', projects: 'Projects',
     project: { carousel: 'Available projects', details: 'Project details', visit: 'Visit website', sourceCode: 'Source code', technologies: 'Technologies', empty: 'No projects available.' },
     language: { label: 'Language', auto: 'Automatic', en: 'English', es: 'Español' },
@@ -9,6 +10,7 @@ export const texts: Record<Locale, TextDictionary> = {
   },
   es: {
     name: 'David Ceja Zapata', profession: 'Ingeniero en sistemas',
+    portfolio: 'David Ceja Zapata - Portafolio', home: 'Inicio', contact: 'Contacto', navigation: 'Navegación',
     experience: 'Experiencia', projects: 'Proyectos',
     project: { carousel: 'Proyectos disponibles', details: 'Detalles del proyecto', visit: 'Visitar sitio web', sourceCode: 'Código fuente', technologies: 'Tecnologías', empty: 'No hay proyectos disponibles.' },
     language: { label: 'Idioma', auto: 'Automático', en: 'English', es: 'Español' },

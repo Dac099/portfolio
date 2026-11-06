@@ -1,3 +1,9 @@
-.control { display: flex; align-items: center; gap: .5rem; color: var(--fg); font-size: .75rem; }
-.control select { max-width: 100%; padding: .35rem; color: var(--fg); background: var(--bg); border: 1px solid var(--sec); border-radius: 0; }
-.control select:focus-visible { outline: 2px solid var(--acc); outline-offset: 2px; }
+.control { display: flex; align-items: center; gap: .5rem; min-width: 0; margin: 0; padding: 0; border: 0; color: var(--fg); font-size: .7rem; }
+.control legend { float: left; padding: 0; }
+.options { display: flex; border: 1px solid var(--sec); }
+.option { position: relative; display: grid; min-width: 2rem; min-height: 1.75rem; place-items: center; padding: .2rem .4rem; cursor: pointer; }
+.option + .option { border-left: 1px solid var(--sec); }
+.option:has(input:checked) { color: var(--bg); background: var(--acc); }
+.option input { position: absolute; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
+.option:has(input:focus-visible) { outline: 2px solid var(--acc); outline-offset: 2px; z-index: 1; }
+.srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }

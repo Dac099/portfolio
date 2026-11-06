@@ -20,7 +20,11 @@
 }
 :root[data-theme='light'] { --bg: #dfdfdf; --fg: #212121; --sec: #616161; --acc: #d50db1; --ascii-font-weight: 700; }
 *, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 html, body { overflow-x: clip; }
 body { margin: 0; min-width: 0; }
 button, select { font: inherit; }
 ::selection { background: var(--acc); color: var(--bg); }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

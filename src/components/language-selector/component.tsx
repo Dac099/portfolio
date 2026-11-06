@@ -1,6 +1,22 @@
-import type { LanguagePreference, TextDictionary } from '../../i18n/types'
+import type { Locale, TextDictionary } from '../../i18n/types'
 import styles from './component.module.css'
-type Props = { value: LanguagePreference; onChange: (value: LanguagePreference) => void; labels: TextDictionary['language'] }
+type Props = { value: Locale; onChange: (value: Locale) => void; labels: TextDictionary['language'] }
 export function LanguageSelector({ value, onChange, labels }: Props) {
-  return <label className={styles.control}>{labels.label}<select value={value} onChange={(event) => onChange(event.target.value as LanguagePreference)}><option value="auto">{labels.auto}</option><option value="es">{labels.es}</option><option value="en">{labels.en}</option></select></label>
+  return (
+    <fieldset className={styles.control}>
+      <legend>{labels.label}</legend>
+      <div className={styles.options}>
+        <label className={styles.option}>
+          <input type="radio" name="language" value="es" checked={value === 'es'} onChange={() => onChange('es')} />
+          <span aria-hidden="true">ES</span>
+          <span className={styles.srOnly}>{labels.es}</span>
+        </label>
+        <label className={styles.option}>
+          <input type="radio" name="language" value="en" checked={value === 'en'} onChange={() => onChange('en')} />
+          <span aria-hidden="true">EN</span>
+          <span className={styles.srOnly}>{labels.en}</span>
+        </label>
+      </div>
+    </fieldset>
+  )
 }
