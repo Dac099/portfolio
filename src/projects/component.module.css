@@ -1,1 +1,15 @@
-.section { min-height: 100dvh; padding: 4rem 1rem; }
+.section { position: relative; isolation: isolate; min-height: 100dvh; overflow: clip; }
+.foreground { position: relative; z-index: 1; min-width: 0; min-height: 100dvh; padding: 4rem clamp(1rem, 4vw, 3rem); }
+.background { position: absolute; inset: 0; z-index: 0; pointer-events: none; user-select: none; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (view-timeline-name: --projects) and (animation-timeline: --projects) and (animation-range: entry 0% entry 100%) {
+    .section { view-timeline-name: --projects; view-timeline-axis: block; }
+    .foreground [data-scroll-letter] {
+      animation: reveal-letter 1ms steps(1, end) both;
+      animation-timeline: --projects;
+      animation-range: entry var(--reveal-start) entry var(--reveal-end);
+    }
+  }
+}
+@keyframes reveal-letter { from { opacity: 0; } to { opacity: 1; } }

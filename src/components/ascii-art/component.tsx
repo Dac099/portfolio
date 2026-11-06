@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react'
 import styles from './component.module.css'
-type Props = { art: string | readonly string[]; label: string; as: 'h1' | 'h2' | 'p'; accent?: boolean; align?: 'left' | 'center'; size?: 'normal' | 'small'; revealColumns?: readonly number[] }
-export function AsciiArt({ art, label, as: Tag, accent = false, align = 'center', size = 'normal', revealColumns }: Props) {
+type Props = { art: string | readonly string[]; label: string; as: 'h1' | 'h2' | 'p'; accent?: boolean; align?: 'left' | 'center'; size?: 'normal' | 'small'; revealColumns?: readonly number[]; revealLayers?: readonly string[] }
+export function AsciiArt({ art, label, as: Tag, accent = false, align = 'center', size = 'normal', revealColumns, revealLayers }: Props) {
   const words = typeof art === 'string' ? [art] : art
 
   return (
@@ -10,12 +10,12 @@ export function AsciiArt({ art, label, as: Tag, accent = false, align = 'center'
       {words.map((word, index) => {
         const lines = word.split('\n')
         const columns = Math.max(...lines.map((line) => line.length))
-        const pieces = revealColumns?.map((start, pieceIndex) => {
+        const pieces = revealLayers ?? revealColumns?.map((start, pieceIndex) => {
           const end = revealColumns[pieceIndex + 1] ?? columns
           return lines.map((line) => line.padEnd(columns).slice(start, end)).join('\n')
         })
         return (
-          <span key={index} aria-hidden="true" className={`${styles.art} ${pieces ? styles.segmented : ''}`} style={{ '--columns': columns } as CSSProperties}>
+          <span key={index} aria-hidden="true" className={`${styles.art} ${revealLayers ? styles.layered : pieces ? styles.segmented : ''}`} style={{ '--columns': columns } as CSSProperties}>
             {pieces ? pieces.map((piece, pieceIndex) => (
               <span key={pieceIndex} data-scroll-letter style={{
                 '--reveal-start': `${pieceIndex / pieces.length * 100}%`,

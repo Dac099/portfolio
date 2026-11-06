@@ -3,5 +3,7 @@
 .accent { color: var(--acc); }
 .art { display: block; flex: none; white-space: pre; text-align: left; font-family: 'Space Mono', monospace; font-size: min(var(--ascii-font-size), calc(100cqi / var(--columns) / .65)); line-height: 1.1; letter-spacing: 0; font-variant-ligatures: none; }
 .segmented { display: flex; }
+.layered { display: grid; }
+.layered > span { grid-area: 1 / 1; }
 .small .art { font-size: min(calc(var(--ascii-font-size) * .75), calc(100cqi / var(--columns) / .65 * .75)); }
 .srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
