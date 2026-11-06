@@ -20,7 +20,7 @@ const media: Record<AchievementId, { hero?: Media; gallery: Media[] }> = {
   queries: { hero: icon('PostgreSQL', 'psql.svg'), gallery: [photo('graphicSystem', 'graphicSystem.jpg', 'asciiGraphicSystem.png', '4080 / 3072'), icon('Data', 'data.svg'), icon('Data Server', 'databaseServer.svg')] },
   integrations: { hero: icon('HubSpot', 'hubspot.svg'), gallery: [photo('monitorApp', 'monitorApp.jpg', 'asciiMonitorApp.png', '3072 / 4080'), photo('traceability', 'traceability.jpg', 'asciiTraceability.png', '4080 / 3072'), icon('Meta', 'meta-glyph.svg'), icon('API', 'api.svg')] },
   requirements: { hero: icon('Document', 'document.svg'), gallery: [photo('site', 'site.jpg', 'asciiSite.png', '3072 / 4080'), photo('diagram', 'diagram.jpg', 'aciiDiagram.png', '2160 / 3840'), icon('Jira', 'jira.svg')] },
-  stack: { gallery: [icon('Docker', 'docker.svg'), icon('Git', 'git.svg'), icon('Azure', 'azure.svg'), icon('.NET', 'dotnet.svg'), icon('TypeScript', 'typescript.svg'), icon('React', 'react.svg'), icon('Next.js', 'nextjs.svg'), icon('PostgreSQL', 'psql.svg'), icon('MySQL', 'mysql.svg'), icon('Linux', 'linux.svg'), icon('Testing', 'testing.svg')] },
+  stack: { gallery: [icon('Docker', 'docker.svg'), icon('Git', 'git.svg'), icon('AWS', 'aws-svgrepo-com.svg'), icon('.NET', 'dotnet.svg'), icon('TypeScript', 'typescript.svg'), icon('React', 'react.svg'), icon('Next.js', 'nextjs.svg'), icon('PostgreSQL', 'psql.svg'), icon('MySQL', 'mysql.svg'), icon('Linux', 'linux.svg'), icon('Testing', 'testing.svg')] },
 }
 
 function useSmallScreen() {
