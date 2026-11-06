@@ -1,0 +1,30 @@
+[
+  {
+    "id": "holly-salsa",
+    "name": {
+      "es": "Tienda de salsas mexicanas",
+      "en": "Mexican salsa store"
+    },
+    "url": "https://hollysalsa.com",
+    "description": {
+      "es": "Holly Salsa es una tienda en línea que tiene las funciones de autenticación usando Better Auth, los pagos se procesan con Stripe usando el formulario embebido, la tienda implementa el API de envia.com para la cotización de envío y permite al usuario seleccionar el carrier de su preferencia. Se utiliza Cloudflare para el almacenamiento y redimensionamiento de imágenes. Además de la tienda hay un panel de administrador que se encarga de la generación de guías para las órdenes, administrar los productos, usuarios con permisos administrativos y las reseñas que se muestran en la página. Para el despliegue de la página se utilizó la plataforma Seenode.",
+      "en": "Holly Salsa is an online store with authentication powered by Better Auth. Payments are processed through Stripe's embedded form. The store integrates the envia.com API for shipping quotes and lets customers choose their preferred carrier. Cloudflare is used for image storage and resizing. In addition to the storefront, an admin panel handles order label generation, product management, administrative user permissions, and reviews displayed on the site. The site is deployed on Seenode."
+    },
+    "images": {
+      "ascii": "asciiHollySalsa.png",
+      "original": "hollysalsa.png",
+      "alt": {
+        "es": "Página principal de Holly Salsa",
+        "en": "Holly Salsa storefront"
+      }
+    },
+    "technologies": [
+      "PostgreSQL",
+      "Cloudflare",
+      "Seenode",
+      "Next.js",
+      "TypeScript",
+      "Stripe"
+    ]
+  }
+]

@@ -1,6 +1,57 @@
 .section { position: relative; isolation: isolate; min-height: 100dvh; overflow: clip; }
-.foreground { position: relative; z-index: 1; min-width: 0; min-height: 100dvh; padding: 4rem clamp(1rem, 4vw, 3rem); }
+.foreground { position: relative; z-index: 1; display: flex; flex-direction: column; min-width: 0; min-height: 100dvh; padding: 4rem clamp(1rem, 4vw, 3rem); }
 .background { position: absolute; inset: 0; z-index: 0; pointer-events: none; user-select: none; }
+.carousel { display: flex; gap: .75rem; min-width: 0; margin: 1.5rem 0; padding: .5rem; border: 1px solid var(--sec); background: color-mix(in srgb, var(--bg) 68%, transparent); overflow-x: auto; overscroll-behavior-inline: contain; scroll-snap-type: x mandatory; }
+.projectCard { display: grid; flex: 0 0 15rem; grid-template-columns: 7rem minmax(0, 1fr); align-items: center; gap: .75rem; min-width: 0; min-height: 6rem; padding: .5rem; border: 1px solid transparent; color: var(--fg); background: transparent; font: inherit; text-align: left; cursor: pointer; scroll-snap-align: start; }
+.projectCard[aria-selected='true'] { border-color: var(--fg); background: color-mix(in srgb, var(--fg) 10%, var(--bg)); }
+.projectCard:hover, .projectCard:focus-visible { border-color: var(--acc); }
+.projectCard:focus-visible, .links a:focus-visible { outline: 2px solid var(--acc); outline-offset: 3px; position: relative; z-index: 2; }
+.projectCard:disabled { cursor: wait; }
+.thumbnail { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: var(--bg); }
+.thumbnail img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; }
+.thumbnail .original { clip-path: inset(100% 0 0 0); transition: clip-path 250ms ease-in-out; }
+.projectCard:hover .original, .projectCard:focus-visible .original { clip-path: inset(0); }
+.projectName { min-width: 0; overflow-wrap: anywhere; }
+.detailPanel { display: grid; flex: 1; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: clamp(1rem, 2vw, 2rem); min-width: 0; padding: .5rem; border: 1px solid var(--sec); background: color-mix(in srgb, var(--bg) 68%, transparent); }
+.detailImage { position: relative; min-width: 0; min-height: 18rem; border: 1px solid var(--sec); background: var(--bg); overflow: hidden; }
+.detailImage img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; }
+.imageInTransit img { opacity: 0; }
+.details { min-width: 0; padding: clamp(.5rem, 1.5vw, 1.5rem); overflow-wrap: anywhere; }
+.details h3 { margin: 0 0 1rem; font-size: clamp(1.15rem, 2vw, 1.75rem); line-height: 1.3; }
+.details p { margin: 1.25rem 0; line-height: 1.65; }
+.details h4 { margin: 1.5rem 0 .75rem; font-size: 1rem; }
+.links { display: flex; flex-wrap: wrap; gap: .75rem; }
+.links a { display: grid; gap: .25rem; min-width: 0; padding: .5rem .75rem; border: 1px solid var(--sec); color: var(--fg); text-decoration: none; overflow-wrap: anywhere; }
+.links a span:first-child { color: var(--sec); font-size: .8em; }
+.links a:hover { border-color: var(--acc); }
+.technologies { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0; padding: 0; list-style: none; }
+.technologies li { padding: .35rem .65rem; border: 1px dashed var(--sec); background: color-mix(in srgb, var(--fg) 8%, var(--bg)); }
+.empty { padding: 1rem; border: 1px solid var(--sec); }
+.revealDetails { animation: reveal-details 300ms ease-out both; }
+
+@media (max-width: 767px) {
+  .foreground { padding-top: 3rem; }
+  .carousel { margin: 1rem 0; }
+  .projectCard { flex-basis: 12rem; grid-template-columns: 5rem minmax(0, 1fr); min-height: 5rem; }
+  .detailPanel { grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+  .detailImage { min-height: 0; aspect-ratio: 16 / 10; }
+  .details { padding: .5rem; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .detailPanel { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .detailImage { min-height: 16rem; }
+}
+
+@keyframes reveal-details {
+  from { opacity: 0; transform: translateX(1rem); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thumbnail .original { transition: none; }
+  .revealDetails { animation: none; }
+}
 
 @media (prefers-reduced-motion: no-preference) {
   @supports (view-timeline-name: --projects) and (animation-timeline: --projects) and (animation-range: entry 0% entry 100%) {
@@ -12,4 +63,5 @@
     }
   }
 }
+
 @keyframes reveal-letter { from { opacity: 0; } to { opacity: 1; } }

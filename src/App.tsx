@@ -26,7 +26,7 @@ function App() {
       <main>
         <Home name={content.name} profession={content.profession} art={art} />
         <Experience title={content.experience} art={art.experience} locale={locale} content={experienceContent[locale]} />
-        <Projects title={content.projects} art={art.projects} locale={locale} />
+        <Projects title={content.projects} art={art.projects} locale={locale} labels={content.project} />
       </main>
     </>
   )
