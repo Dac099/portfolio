@@ -10,4 +10,13 @@
   background: color-mix(in srgb, var(--bg) 65%, transparent);
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
+  transform: translateY(0);
+  transition: transform 240ms ease;
+}
+
+.toolbar.hidden { transform: translateY(-100%); }
+.toolbar.hidden:focus-within { transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .toolbar { transition: none; }
 }
